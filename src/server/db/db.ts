@@ -2,6 +2,7 @@
 
 import { db } from "~/server/db";
 
+/*
 export async function getProjects() {
   const projects = await db.query.projects.findMany();
 
@@ -39,4 +40,4 @@ export async function getProject(name: string) {
   }
 
   return projects;
-}
+}*/

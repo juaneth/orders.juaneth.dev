@@ -30,15 +30,10 @@ export async function initializeUser() {
     .getUser(user.userId!)
     .then(async (userInfo) => {
       if (userInfo) {
-        await clerkClient.users.deleteUser(user.userId!);
+        console.log(userInfo);
       }
     })
     .catch((error) => {
-      console.error("Account doesnt exist to delete.", error);
-
-      auth().redirectToSignIn();
+      console.error("Account doesnt exist to Init..", error);
     });
-
-  redirect("/");
 }
-

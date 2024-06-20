@@ -18,44 +18,26 @@ import {
  *
  * @see https://orm.drizzle.team/docs/goodies#multi-project-schema
  */
-export const createTable = pgTableCreator((name) => `argo_${name}`);
+export const createTable = pgTableCreator((name) => `orderjuanethdev_${name}`);
 
-export const projects = createTable(
-  "projects",
-  {
-    id: serial("id").primaryKey(),
-    name: varchar("name", { length: 64 }).notNull(),
-    displayName: varchar("displayName", { length: 32 }).notNull(),
-    desc: varchar("desc", { length: 256 }),
-    createdAt: timestamp("created_at")
-      .default(sql`CURRENT_TIMESTAMP`)
-      .notNull(),
-    updatedAt: timestamp("updatedAt"),
-    iconUrl: varchar("iconUrl", { length: 1024 }),
-    bannerUrl: varchar("bannerUrl", { length: 1024 }),
-    tags: json("tags").default([]).notNull(),
-    owner: varchar("owner", { length: 256 }).notNull(),
-    watchers: varchar("watchers", { length: 256 }).default("0").notNull(),
-  },
-  (example) => ({
-    nameIndex: index("name_idx").on(example.name),
-  }),
-);
+export const orders = createTable("orders", {
+  id: serial("id").primaryKey(),
+  title: varchar("type", { length: 256 }).notNull(),
+  body: varchar("body", { length: 1024 }).notNull(),
+  createdAt: timestamp("created_at")
+    .default(sql`CURRENT_TIMESTAMP`)
+    .notNull(),
+  updatedAt: timestamp("updatedAt"),
+  owner: varchar("owner", { length: 256 }).notNull(),
+});
 
-export const users = createTable(
-  "users",
-  {
-    id: serial("id").primaryKey(),
-    username: varchar("name", { length: 64 }).notNull(),
-    displayName: varchar("displayName", { length: 32 }).notNull(),
-    desc: varchar("desc", { length: 256 }),
-    createdAt: timestamp("created_at")
-      .default(sql`CURRENT_TIMESTAMP`)
-      .notNull(),
-    updatedAt: timestamp("updatedAt"),
-    iconUrl: varchar("iconUrl", { length: 1024 }),
-  },
-  (example) => ({
-    usernameIndex: index("username_idx").on(example.username),
-  }),
-);
+export const accounts = createTable("accounts", {
+  id: serial("id").primaryKey(),
+  username: varchar("name", { length: 64 }).notNull(),
+  desc: varchar("desc", { length: 256 }),
+  createdAt: timestamp("created_at")
+    .default(sql`CURRENT_TIMESTAMP`)
+    .notNull(),
+  updatedAt: timestamp("updatedAt"),
+  iconUrl: varchar("iconUrl", { length: 1024 }),
+});

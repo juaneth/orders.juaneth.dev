@@ -9,30 +9,35 @@ import { dark } from "@clerk/themes";
 const dmsans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Argo",
-  description: "Platform to let communities choose how they want things done",
+  title: "juaneth.dev - Commisions",
+  description: "Get your brand started today",
 };
 
 import Navbar from "./_components/Navbar";
+import Footer from "./_components/Footer";
+
+import Cursor from "./_components/Cursor";
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <ClerkProvider
       appearance={{
         baseTheme: dark,
       }}
-      signUpForceRedirectUrl={"/onboarding"}
     >
       <html lang="en">
-        <body className={`${dmsans.className} dark`}>
-          <div className="grid h-screen grid-rows-[auto,1fr]">
-            <Navbar />
-            <main className="overflow-y-auto">{children}</main>
+        <body className={`${dmsans.className} dark bg-black`}>
+          <Cursor></Cursor>
+          <div className="relative grid h-screen grid-rows-[auto,1fr]">
+            <main className="min-h-screen overflow-y-auto">
+              <Navbar />
+              {children}
+              <Footer></Footer>
+            </main>
           </div>
         </body>
       </html>

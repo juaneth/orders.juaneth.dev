@@ -4,65 +4,64 @@ import Image from "next/image";
 
 import Link from "next/link";
 
-import { Button } from "~/components/ui/button";
+import { initializeUser } from "~/server/auth/auth";
 
-import { usePathname } from "next/navigation";
+import { Button } from "~/components/ui/button";
+import { Separator } from "~/components/ui/separator";
+
+import { IoIosAdd } from "react-icons/io";
 
 import { SignInButton, SignedOut, SignedIn, UserButton } from "@clerk/nextjs";
 
 export default function Navbar() {
-  const pathname = usePathname();
-
-  if (pathname == "/onboarding") {
-    return <></>;
-  }
   return (
     <>
-      <nav className="bordered-b flex w-full flex-row items-center justify-between bg-neutral-950 p-5 shadow-xl shadow-black/30">
-        <div className="flex w-min flex-row">
-          <Link
-            href={"/"}
-            className="mr-5 flex flex-col items-center justify-center"
-          >
-            <Image
-              priority
-              src={"/Argo-Wordmark.svg"}
-              height={32}
-              width={80}
-              alt="Chita Logo"
-              className="min-h-8 min-w-20"
-            />
-          </Link>
-
-          <Link href={"/discover"}>
-            <Button variant={"link"} className="text-lg" role="button">
-              Discover
-            </Button>
-          </Link>
-
-          <SignedIn>
-            <Link href={"/user/watchlist"}>
-              <Button variant={"link"} className="text-lg" role="button">
-                Your Watchlist
-              </Button>
+      <nav className="bordered-b sticky top-0 z-50 flex w-full flex-row items-center justify-between bg-black/50 p-3 px-5 shadow-xl shadow-black/30 backdrop-blur-lg">
+        <div className="flex flex-row gap-4">
+          <div className="flex flex-row items-center gap-3 text-xl font-bold tracking-tighter">
+            <Link
+              href={"https://juaneth.dev"}
+              className="flex flex-col items-center justify-center"
+            >
+              <h1>juaneth.dev</h1>
             </Link>
-          </SignedIn>
+            <Separator orientation="vertical" className="h-3/4" />
+
+            <Link
+              href={"/"}
+              className="flex flex-col items-center justify-center"
+            >
+              <h2 className="text-lg font-normal">Commisions</h2>
+            </Link>
+          </div>
         </div>
 
         <div className="flex w-min flex-row gap-4">
-          <SignedOut>
-            <Button variant={"link"} className="text-lg" role="button">
-              <SignInButton />
-            </Button>
-          </SignedOut>
           <SignedIn>
-            <Button variant={"link"} className="text-lg" role="button">
-              Notifications
-            </Button>
+            <Link href={"/order"}>
+              <Button
+                className="bordered-all relative gap-3 rounded-sm bg-black pl-3 pr-5 text-base font-normal text-white hover:bg-white/10"
+                role="button"
+              >
+                <IoIosAdd className="text-2xl" />
+                Create an order
+              </Button>
+            </Link>
+
+            <Link href={"/orders"}>
+              <Button
+                variant={"link"}
+                className="text-base font-semibold"
+                role="button"
+              >
+                Your Orders
+              </Button>
+            </Link>
+
             <UserButton
               appearance={{
                 elements: {
-                  userButtonAvatarBox: "h-10 w-10",
+                  userButtonAvatarBox: "h-10 w-10 bordered-all",
                 },
               }}
             />
