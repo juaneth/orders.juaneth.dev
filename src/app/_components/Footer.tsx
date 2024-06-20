@@ -8,8 +8,7 @@ const FooterImage = (
 ) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width={600}
-    height={128}
+    viewBox="0 0 600 128"
     fill="none"
     {...props}
   >
@@ -35,12 +34,13 @@ const FooterImage = (
 export default function Footer() {
   return (
     <>
-      <div className="bordered-t relative mt-5 flex w-full flex-row items-end justify-center bg-black bg-neutral-950">
+      <div className="bordered-t relative mt-5 flex w-full flex-row items-end justify-center overflow-clip bg-black bg-neutral-950">
         <div className="flex w-full flex-row justify-center">
-          <AuroraBackground className="bordered-all crossed crossed-lg m-6 flex h-32 w-full flex-row justify-center rounded-lg border-dashed">
-            <div className="crossed overflow-show relative">
-              <FooterImage className="bordered-r bordered-l crossed crossed-lg relative overflow-auto border-dashed"></FooterImage>
-            </div>
+          <AuroraBackground
+            className="bordered-all crossed crossed-lg m-6 flex h-24 w-full rounded-lg border-dashed px-3"
+            containerClassName={"items-end justify-center"}
+          >
+            <FooterImage className="bordered-r bordered-l crossed crossed-lg relative max-h-full min-h-12 max-w-full border-dashed"></FooterImage>
           </AuroraBackground>
         </div>
       </div>

@@ -1,14 +1,17 @@
 "use client";
 import { cn } from "~/lib/utils";
 import React, { ReactNode } from "react";
+import { ClassNameValue } from "tailwind-merge";
 
 interface AuroraBackgroundProps extends React.HTMLProps<HTMLDivElement> {
   children: ReactNode;
+  containerClassName?: string;
   showRadialGradient?: boolean;
 }
 
 export const AuroraBackground = ({
   className,
+  containerClassName,
   children,
   showRadialGradient = true,
   ...props
@@ -22,13 +25,13 @@ export const AuroraBackground = ({
         )}
         {...props}
       >
-        <div className="absolute inset-3 overflow-visible">
+        <div className="absolute inset-0 overflow-visible">
           <div
             className={cn(
               `
             pointer-events-none
             absolute
-            -inset-[10px]
+            inset-[0px]
             opacity-40
             blur-[10px]
             invert
@@ -45,7 +48,7 @@ export const AuroraBackground = ({
                 `[mask-image:radial-gradient(ellipse_at_100%_0%,black_20%,var(--transparent)_90%)]`,
             )}
           ></div>
-          <div className="flex h-full w-full items-center justify-center">
+          <div className={cn("flex h-full w-full", containerClassName)}>
             {children}
           </div>
         </div>

@@ -10,7 +10,7 @@ const dmsans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "juaneth.dev - Commisions",
-  description: "Get your brand started today",
+  description: "Get your online brand started today",
 };
 
 import Navbar from "./_components/Navbar";
@@ -28,6 +28,7 @@ export default function RootLayout({
       appearance={{
         baseTheme: dark,
       }}
+      
     >
       <html lang="en">
         <body className={`${dmsans.className} dark bg-black`}>
