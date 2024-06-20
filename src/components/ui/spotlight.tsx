@@ -11,7 +11,7 @@ export const Spotlight = ({ className, fill }: SpotlightProps) => {
     <div className="absolute h-full w-full overflow-hidden">
       <svg
         className={cn(
-          "animate-spotlight pointer-events-none absolute top-20 z-[1]  h-[169%] w-[138%] opacity-0 lg:w-[84%]",
+          "pointer-events-none absolute top-20 z-[1] h-[169%]  w-[138%] animate-spotlight opacity-0 lg:w-[84%]",
           className,
         )}
         xmlns="http://www.w3.org/2000/svg"
@@ -25,7 +25,7 @@ export const Spotlight = ({ className, fill }: SpotlightProps) => {
             rx="1924.71"
             ry="273.501"
             transform="matrix(-0.822377 -0.568943 -0.568943 0.822377 3631.88 2291.09)"
-            fill={fill || "white"}
+            fill={fill ?? "white"}
             fillOpacity="0.15"
           ></ellipse>
         </g>
