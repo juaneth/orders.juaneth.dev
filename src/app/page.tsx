@@ -347,15 +347,12 @@ export default async function Home() {
                       </TableRow>
 
                       <TableRow>
-                        <TableCell className="font-medium">Argo</TableCell>
                         <TableCell>
                           <HoverCard>
                             <HoverCardTrigger>
-                              <Link href={"https://argo.juaneth.dev"}>
-                                <Button variant={"link"} className="px-0">
-                                  argo.juaneth.dev
-                                </Button>
-                              </Link>
+                              <Button variant={"link"} className="px-0">
+                                argo.juaneth.dev
+                              </Button>
                             </HoverCardTrigger>
                             <HoverCardContent className="w-96">
                               <img
@@ -366,23 +363,23 @@ export default async function Home() {
                             </HoverCardContent>
                           </HoverCard>
                         </TableCell>
+                        <TableCell>
+                          <Link href={"https://argo.juaneth.dev"}>
+                            <Button variant={"link"} className="px-0">
+                              argo.juaneth.dev
+                            </Button>
+                          </Link>
+                        </TableCell>
                         <TableCell>Still in development</TableCell>
                         <TableCell className="text-right">$154.99+</TableCell>
                       </TableRow>
                       <TableRow>
-                        <TableCell className="font-medium">
-                          juaneth.dev -- old version
-                        </TableCell>
                         <TableCell>
                           <HoverCard>
                             <HoverCardTrigger>
-                              <Link
-                                href={"https://github.com/juaneth/juanethdev"}
-                              >
-                                <Button variant={"link"} className="px-0">
-                                  github.com
-                                </Button>
-                              </Link>
+                              <Button variant={"link"} className="px-0">
+                                juaneth.dev {"->"} Last years revision
+                              </Button>
                             </HoverCardTrigger>
                             <HoverCardContent className="w-96">
                               <img
@@ -392,6 +389,13 @@ export default async function Home() {
                               />
                             </HoverCardContent>
                           </HoverCard>
+                        </TableCell>
+                        <TableCell>
+                          <Link href={"https://github.com/juaneth/juanethdev"}>
+                            <Button variant={"link"} className="px-0">
+                              github.com
+                            </Button>
+                          </Link>
                         </TableCell>
                         <TableCell>~2 weeks</TableCell>
                         <TableCell className="text-right">
