@@ -39,7 +39,10 @@ export default async function Home() {
   return (
     <div className="flex min-h-full flex-col">
       <div className="flex w-full flex-row justify-center">
-        <AuroraBackground className="bordered-all m-5 h-[81vh] w-full rounded-lg">
+        <AuroraBackground
+          className="bordered-all m-5 h-[81vh] w-full rounded-lg"
+          containerClassName="justify-center"
+        >
           <div className="flex flex-col items-center justify-center gap-3 bg-black/30 text-center">
             <h1 className="px-10 text-4xl font-bold tracking-tighter text-white">
               Get your online brand started with juaneth.dev.
