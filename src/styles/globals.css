@@ -91,6 +91,10 @@
   min-height: 700px;
 }
 
+.crossed {
+  overflow: visible;
+}
+
 .crossed::after {
   content: url("/cross.svg");
   height: 10px;
@@ -102,6 +106,7 @@
   right: 0;
   bottom: 0;
   left: -5px;
+  z-index: 50;
 }
 
 .crossed::before {
@@ -113,6 +118,8 @@
   position: absolute;
   right: -5px;
   bottom: 0px;
+  z-index: 50;
+  overflow: visible;
 }
 
 .crossed-sm::after {
