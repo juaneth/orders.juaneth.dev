@@ -1,24 +1,24 @@
-"use client";
+"use client"; // indicates Client Component
 
-import CustomCursor from "custom-cursor-react";
-import "custom-cursor-react/dist/index.css";
+// Import with next's dynamic import
+import dynamic from "next/dynamic";
+
+const AnimatedCursor = dynamic(() => import("react-animated-cursor"), {
+  ssr: false,
+});
 
 export default function Cursor() {
   return (
-    <div>
-      <CustomCursor
-        targets={["a", "Button"]}
-        customClass="custom-cursor"
-        dimensions={30}
-        fill="#FFF"
-        smoothness={{
-          movement: 0.15,
-          scale: 0.1,
-          opacity: 0.5,
-        }}
-        targetOpacity={0.5}
-        targetScale={2}
-      />
-    </div>
+    <AnimatedCursor
+      color="255, 255, 255"
+      innerSize={0}
+      outerSize={25}
+      innerScale={1}
+      outerScale={1.7}
+      outerAlpha={1}
+      outerStyle={{
+        mixBlendMode: "exclusion",
+      }}
+    />
   );
 }
