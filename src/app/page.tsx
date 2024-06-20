@@ -262,7 +262,7 @@ export default async function Home() {
                           </a>
                         </TableCell>
                         <TableCell>
-                          DM me and I'll respond within a couple days
+                          DM me and I&apos;ll respond within a couple days
                         </TableCell>
                       </TableRow>
                     </TableBody>
@@ -293,7 +293,7 @@ export default async function Home() {
                 <CardHeader>
                   <CardTitle>Projects</CardTitle>
                   <CardDescription>
-                    Websites and apps that I've made over the years.
+                    Websites and apps that I&apos;ve made over the years.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -341,7 +341,7 @@ export default async function Home() {
                         <TableCell className="font-medium">
                           orders.juaneth.dev
                         </TableCell>
-                        <TableCell>You're here!</TableCell>
+                        <TableCell>You&apos;re here!</TableCell>
                         <TableCell>~1 week</TableCell>
                         <TableCell className="text-right">$119.99</TableCell>
                       </TableRow>
@@ -413,7 +413,7 @@ export default async function Home() {
                 <CardHeader>
                   <CardTitle>Designs</CardTitle>
                   <CardDescription>
-                    Designs i've made over the years for various reasons.
+                    Designs i&apos;ve made over the years for various reasons.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>

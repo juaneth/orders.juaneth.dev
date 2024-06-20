@@ -9,7 +9,7 @@ export default function NotFound() {
         Woops... This is awkward
       </h2>
       <p className="text-lg">
-        Unfortunately we couldn{"'"}t find what you were looking for.
+        Unfortunately we couldn&apos;t find what you were looking for.
       </p>
       <Button variant={"link"}>
         <Link href="/">Go back to home page</Link>
