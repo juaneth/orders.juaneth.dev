@@ -1,10 +1,4 @@
-"use client";
-
-import Image from "next/image";
-
 import Link from "next/link";
-
-import { initializeUser } from "~/server/auth/auth";
 
 import { Button } from "~/components/ui/button";
 import { Separator } from "~/components/ui/separator";
@@ -36,7 +30,7 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="flex w-min flex-row gap-4">
+        <div className="flex h-10 flex-row gap-4">
           <SignedIn>
             <Link href={"/order"}>
               <Button
@@ -61,11 +55,15 @@ export default function Navbar() {
             <UserButton
               appearance={{
                 elements: {
-                  userButtonAvatarBox: "h-10 w-10 bordered-all",
+                  userButtonAvatarBox: "h-10 w-10 bordered-all border-dashed",
                 },
               }}
             />
           </SignedIn>
+
+          <SignedOut>
+            <SignInButton></SignInButton>
+          </SignedOut>
         </div>
       </nav>
     </>

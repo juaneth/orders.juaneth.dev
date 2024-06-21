@@ -16,8 +16,6 @@ export const metadata: Metadata = {
 import Navbar from "./_components/Navbar";
 import Footer from "./_components/Footer";
 
-import Cursor from "./_components/Cursor";
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,11 +26,9 @@ export default function RootLayout({
       appearance={{
         baseTheme: dark,
       }}
-      
     >
       <html lang="en">
         <body className={`${dmsans.className} dark bg-black`}>
-          <Cursor></Cursor>
           <div className="relative grid h-screen grid-rows-[auto,1fr]">
             <main className="min-h-screen overflow-y-auto">
               <Navbar />

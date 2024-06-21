@@ -38,6 +38,5 @@ export const accounts = createTable("accounts", {
   createdAt: timestamp("created_at")
     .default(sql`CURRENT_TIMESTAMP`)
     .notNull(),
-  updatedAt: timestamp("updatedAt"),
   iconUrl: varchar("iconUrl", { length: 1024 }),
 });

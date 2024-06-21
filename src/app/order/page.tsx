@@ -1,17 +1,15 @@
 /*
   Data I need:
-  A) Users account
-  B) Users type of request, or custom
-  C) Users request with images
-  D) Preffered method of communication
+  A) Select order type
+  B) Description of whats needed + Preffered method of communication
+  C) Reference images
+  D) Payment (half now half later)
 */
 
-export default async function Order() {
+export default function Order() {
   return (
-    <div className="h-full bg-black">
-      <div className="p-5">
-        <h1>Order page</h1>
-      </div>
+    <div className="p-5">
+      <h1>Order page</h1>
     </div>
   );
 }

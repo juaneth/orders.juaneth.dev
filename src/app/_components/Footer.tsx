@@ -37,7 +37,7 @@ export default function Footer() {
       <div className="bordered-t relative mt-5 flex w-full flex-row items-end justify-center overflow-clip bg-black bg-neutral-950">
         <div className="flex w-full flex-row justify-center">
           <AuroraBackground
-            className="bordered-all crossed crossed-lg m-6 flex h-24 w-full rounded-lg border-dashed px-3"
+            className="bordered-all crossed crossed-lg m-6 flex h-24 w-full rounded-lg border-dashed px-3 lg:h-48"
             containerClassName={"items-end justify-center"}
           >
             <FooterImage className="bordered-r bordered-l crossed crossed-lg relative max-h-full min-h-12 max-w-full border-dashed"></FooterImage>
