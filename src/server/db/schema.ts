@@ -9,7 +9,7 @@ import {
   timestamp,
   varchar,
   json,
-  integer,
+  jsonb,
 } from "drizzle-orm/pg-core";
 
 /**
@@ -22,13 +22,15 @@ export const createTable = pgTableCreator((name) => `orderjuanethdev_${name}`);
 
 export const orders = createTable("orders", {
   id: serial("id").primaryKey(),
-  title: varchar("type", { length: 256 }).notNull(),
+  type: varchar("type", { length: 256 }).notNull(),
   body: varchar("body", { length: 1024 }).notNull(),
+  comms: varchar("comms", { length: 32 }).notNull(),
+  references: jsonb("jsonb2").default([{ foo: "bar" }]),
   createdAt: timestamp("created_at")
     .default(sql`CURRENT_TIMESTAMP`)
     .notNull(),
   updatedAt: timestamp("updatedAt"),
-  owner: varchar("owner", { length: 256 }).notNull(),
+  owner: varchar("owner", { length: 256 }).references(() => accounts.id),
 });
 
 export const accounts = createTable("accounts", {

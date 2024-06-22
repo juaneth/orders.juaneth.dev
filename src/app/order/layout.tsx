@@ -13,23 +13,12 @@ export default function OrderLayout({
   const [progress, setProgress] = useState(0);
 
   function incrementProgress() {
-    setProgress(progress + 0.3);
+    setProgress(progress + 0.2);
   }
 
   return (
     <div className="relative flex h-full flex-col bg-black">
-      <div className="bordered-b flex h-2.5 w-full flex-row items-center">
-        <motion.div
-          className={
-            progress >= 0.9
-              ? "progress-bar bg-green-600 transition-colors duration-700"
-              : "progress-bar bg-neutral-600 transition-colors duration-700"
-          }
-          animate={{ scaleX: progress }}
-          transition={{ type: "spring", stiffness: 100 }}
-        />
-      </div>
-      {children}
+      <div className="flex h-full flex-row">{children}</div>
     </div>
   );
 }
