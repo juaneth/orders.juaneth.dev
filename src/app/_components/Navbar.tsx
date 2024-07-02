@@ -14,18 +14,10 @@ export default function Navbar() {
         <div className="flex flex-row gap-4">
           <div className="flex flex-row items-center gap-3 text-xl font-bold tracking-tighter">
             <Link
-              href={"https://juaneth.dev"}
-              className="flex flex-col items-center justify-center"
-            >
-              <h1>juaneth.dev</h1>
-            </Link>
-            <Separator orientation="vertical" className="h-3/4" />
-
-            <Link
               href={"/"}
               className="flex flex-col items-center justify-center"
             >
-              <h2 className="text-lg font-normal">Commisions</h2>
+              <h1>juaneth.dev</h1>
             </Link>
           </div>
         </div>

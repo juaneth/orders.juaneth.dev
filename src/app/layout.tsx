@@ -9,8 +9,8 @@ import { dark } from "@clerk/themes";
 const dmsans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "juaneth.dev - Commisions",
-  description: "Get your online brand started today",
+  title: "juaneth.dev",
+  description: "Desktop and web developer based in the UK.",
 };
 
 import Navbar from "./_components/Navbar";
@@ -29,13 +29,14 @@ export default function RootLayout({
     >
       <html lang="en">
         <body className={`${dmsans.className} dark bg-black`}>
-          <div className="relative grid h-screen grid-rows-[auto,1fr]">
-            <main className="min-h-screen overflow-y-auto">
+          <main className="flex flex-col overflow-y-auto">
+            <div className="flex min-h-screen flex-col">
               <Navbar />
               {children}
-              <Footer></Footer>
-            </main>
-          </div>
+            </div>
+
+            <Footer></Footer>
+          </main>
         </body>
       </html>
     </ClerkProvider>

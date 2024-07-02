@@ -28,480 +28,146 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 
 import { Separator } from "~/components/ui/separator";
 
-import { AuroraBackground } from "~/components/ui/aurora-background";
-import { Spotlight } from "~/components/ui/spotlight";
-
-import { IoIosAdd } from "react-icons/io";
-
 import Link from "next/link";
+import Image from "next/image";
+
+import { AuroraBackground } from "~/components/ui/aurora-background";
+
+import { FaGithub, FaDiscord, FaFigma, FaShoppingBag } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+
+import { BiLogoTypescript } from "react-icons/bi";
+import { RiNextjsFill } from "react-icons/ri";
+import { RiTailwindCssFill } from "react-icons/ri";
+import { RiJavascriptFill } from "react-icons/ri";
+import { FaReact, FaServer } from "react-icons/fa";
+import { SiClerk } from "react-icons/si";
+import { FaNode } from "react-icons/fa";
+
+import Desc from "./_components/Cards/Desc";
 
 export default async function Home() {
   return (
-    <div className="flex min-h-full flex-col">
-      <div className="flex w-full flex-row justify-center">
-        <AuroraBackground
-          className="bordered-all m-5 h-96 w-full rounded-lg"
-          containerClassName="justify-center"
-        >
-          <div className="flex flex-col items-center justify-center gap-3 bg-black/30 text-center">
-            <h1 className="px-10 text-4xl font-bold tracking-tighter text-white">
-              Get your online brand started with juaneth.dev.
-            </h1>
-            <p className="text-white/75">
-              Professional quality websites. Fast.
-            </p>
+    <div className="flex flex w-full grow flex-col items-center">
+      <div className="bordered-all m-3 h-[60rem] max-w-[100rem] grow grid-cols-12 grid-rows-12 divide-x divide-y divide-dashed divide-white/30 lg:grid">
+        <div className="crossed relative col-span-12 row-span-3 border-dashed">
+          <AuroraBackground
+            className="min-h-48 w-full"
+            containerClassName="justify-center items-center h-full"
+          >
+            <div className="flex flex-col items-center justify-center gap-4 bg-black/30 text-center">
+              <h1 className="text-5xl font-bold tracking-tighter text-white">
+                juaneth.dev
+              </h1>
+              <p className="text-lg text-white/75">
+                Full stack/web developer from the UK.
+              </p>
+            </div>
+          </AuroraBackground>
+        </div>
+        <div className="crossed relative col-span-8 row-span-1">
+          <Desc></Desc>
+        </div>
+        <div className="crossed relative col-span-4 row-span-1 flex flex-row items-center justify-center gap-5 py-8">
+          <Link href={"https://github.com/juaneth"}>
+            <FaGithub className="text-3xl text-white/70 transition-all hover:text-white/90" />
+          </Link>
 
-            <Link href={"/order"}>
-              <Button
-                className="bordered-all crossed relative mt-3 w-48 rounded-sm border-dashed bg-black text-white hover:bg-neutral-950"
-                role="button"
-              >
-                Create an order
-              </Button>
-            </Link>
-          </div>
-        </AuroraBackground>
-      </div>
+          <Separator orientation="vertical"></Separator>
 
-      <div className="flex w-full flex-col items-start justify-center justify-center gap-10 p-5">
-        <div className="flex w-full flex-col items-center justify-center gap-5 bg-black">
-          <h1 className="text-3xl font-bold tracking-tighter">Services:</h1>
+          <Link href={"https://discord.com/invite/SK4mW9shTb"}>
+            <FaDiscord className="text-3xl text-white/70 transition-all hover:text-white/90" />
+          </Link>
 
-          <Tabs defaultValue="websites" className="w-full xl:max-w-[80%]">
-            <TabsList className="w-full justify-center gap-3 bg-black">
-              <TabsTrigger value="websites">Websites</TabsTrigger>
-              <Separator
-                orientation="vertical"
-                className="mx-0 h-3/4 px-0"
-              ></Separator>
-              <TabsTrigger value="brands">Brand design</TabsTrigger>
-              <Separator
-                orientation="vertical"
-                className="mx-0 h-3/4 px-0"
-              ></Separator>
-              <TabsTrigger value="hire">Full time</TabsTrigger>
-            </TabsList>
-            <TabsContent value="websites" className="w-full">
-              <AuroraBackground
-                className="h-[700px] w-full"
-                showRadialGradient={true}
-              >
-                <Card className="panel crossed relative w-full rounded-none border-dashed bg-black/75 backdrop-hue-rotate-30">
-                  <CardHeader>
-                    <CardTitle>Websites</CardTitle>
-                    <CardDescription>
-                      Give yourself an online prescence.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Table className="table">
-                      <TableCaption>
-                        Feel free to contact, prices are negotiable.
-                      </TableCaption>
-                      <TableHeader>
-                        <TableRow className="border-dashed">
-                          <TableHead className="w-min">Complexity:</TableHead>
-                          <TableHead className="w-[175px]">
-                            Usual Features:
-                          </TableHead>
-                          <TableHead>Completed within:</TableHead>
-                          <TableHead>Revisions:</TableHead>
-                          <TableHead className="text-right">
-                            Avg. Price:
-                          </TableHead>
-                        </TableRow>
-                      </TableHeader>
-                      <TableBody>
-                        <TableRow>
-                          <TableCell className="font-medium">
-                            Simple website
-                          </TableCell>
-                          <TableCell>
-                            3 Pages, Contact info, Mobile + Desktop support,
-                            Static
-                          </TableCell>
-                          <TableCell>3 Days</TableCell>
-                          <TableCell>3</TableCell>
-                          <TableCell className="text-right">$14.99</TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell className="font-medium">
-                            Complex website
-                          </TableCell>
-                          <TableCell>
-                            10 Pages, Analytics, SEO, Interactive, Animations
-                          </TableCell>
-                          <TableCell>10 Days</TableCell>
-                          <TableCell>5</TableCell>
-                          <TableCell className="text-right">$39.99</TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell className="font-medium">Web App</TableCell>
-                          <TableCell>
-                            Accounts, Admin Dashboard, Feature rich experience
-                          </TableCell>
-                          <TableCell>30 Days</TableCell>
-                          <TableCell>Unlimited</TableCell>
-                          <TableCell className="text-right">$79.99</TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell className="font-medium">Custom</TableCell>
-                          <TableCell>
-                            Anything not listed here (Forums, Complex
-                            animations, Databases, etc.)
-                          </TableCell>
-                          <TableCell>N/A</TableCell>
-                          <TableCell>Unlimited</TableCell>
-                          <TableCell className="text-right">$99.99+</TableCell>
-                        </TableRow>
-                      </TableBody>
-                    </Table>
-                  </CardContent>
-                </Card>
-              </AuroraBackground>
-            </TabsContent>
-            <TabsContent value="brands">
-              <AuroraBackground
-                className="h-[700px] w-full"
-                showRadialGradient={true}
-              >
-                <Card className="panel crossed relative w-full rounded-none border-dashed bg-black/75 backdrop-hue-rotate-30">
-                  <CardHeader>
-                    <CardTitle>Brand design</CardTitle>
-                    <CardDescription>
-                      Give your business an identity.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Table>
-                      <TableCaption>
-                        Feel free to contact, prices are negotiable.
-                      </TableCaption>
-                      <TableHeader>
-                        <TableRow className="border-dashed">
-                          <TableHead className="w-min">Complexity:</TableHead>
-                          <TableHead className="w-[175px]">
-                            Usual Features:
-                          </TableHead>
-                          <TableHead>Completed within:</TableHead>
-                          <TableHead>Revisions:</TableHead>
-                          <TableHead className="text-right">
-                            Avg. Price:
-                          </TableHead>
-                        </TableRow>
-                      </TableHeader>
-                      <TableBody>
-                        <TableRow>
-                          <TableCell className="font-medium">
-                            Small business
-                          </TableCell>
-                          <TableCell>
-                            Small business social media designs (icons,
-                            banners), Simple website (see above)
-                          </TableCell>
-                          <TableCell>15 Days</TableCell>
-                          <TableCell>5</TableCell>
-                          <TableCell className="text-right">$49.99</TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell className="font-medium">
-                            Ecommerce
-                          </TableCell>
-                          <TableCell>
-                            Social media posts and marketing images for online
-                            advertisment (Instagram, Facebook, X), Complex
-                            website
-                          </TableCell>
-                          <TableCell>25 Days</TableCell>
-                          <TableCell>15</TableCell>
-                          <TableCell className="text-right">$119.99</TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell className="font-medium">Custom</TableCell>
-                          <TableCell>Anything not listed here.</TableCell>
-                          <TableCell>N/A</TableCell>
-                          <TableCell>Unlimited</TableCell>
-                          <TableCell className="text-right">$149.99+</TableCell>
-                        </TableRow>
-                      </TableBody>
-                    </Table>
-                  </CardContent>
-                </Card>
-              </AuroraBackground>
-            </TabsContent>
+          <Separator orientation="vertical"></Separator>
 
-            <TabsContent value="hire">
-              <AuroraBackground
-                className="h-[700px] w-full"
-                showRadialGradient={true}
-              >
-                <Card className="panel crossed relative w-full rounded-none border-dashed bg-black/75 backdrop-hue-rotate-30">
-                  <CardHeader>
-                    <CardTitle>Full time</CardTitle>
-                    <CardDescription>
-                      Hire me as a full time developer. My contact info is
-                      below:
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Table className="table">
-                      <TableHeader>
-                        <TableRow className="border-dashed">
-                          <TableHead className="w-min">Contact type:</TableHead>
-                          <TableHead>Contact info:</TableHead>
-                          <TableHead>Notes:</TableHead>
-                        </TableRow>
-                      </TableHeader>
-                      <TableBody>
-                        <TableRow>
-                          <TableCell className="font-medium">Email</TableCell>
-                          <TableCell>
-                            <a href="mailto:juan@juaneth.dev">
-                              juan@juaneth.dev
-                            </a>
-                          </TableCell>
-                          <TableCell></TableCell>
-                        </TableRow>
+          <Link href={"https://discord.com/invite/SK4mW9shTb"}>
+            <FaXTwitter className="text-3xl text-white/70 transition-all hover:text-white/90" />
+          </Link>
 
-                        <TableRow>
-                          <TableCell className="font-medium">Discord</TableCell>
-                          <TableCell>
-                            <a href="https://discord.com/invite/SK4mW9shTb">
-                              https://discord.com/invite/SK4mW9shTb
-                            </a>
-                          </TableCell>
-                          <TableCell>
-                            Use /contact to create a chat for us or just ping
-                            me.
-                          </TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell className="font-medium">X</TableCell>
-                          <TableCell>
-                            <a href="https://x.com/juanethdev">
-                              https://x.com/juanethdev
-                            </a>
-                          </TableCell>
-                          <TableCell>
-                            DM me and I&apos;ll respond within a couple days
-                          </TableCell>
-                        </TableRow>
-                      </TableBody>
-                    </Table>
-                  </CardContent>
-                </Card>
-              </AuroraBackground>
-            </TabsContent>
-          </Tabs>
+          <Separator orientation="vertical"></Separator>
+
+          <Link href={"https://discord.com/invite/SK4mW9shTb"}>
+            <FaFigma className="text-3xl text-white/70 transition-all hover:text-white/90" />
+          </Link>
+        </div>
+        <div className="crossed techlist relative col-span-12 row-span-1">
+          <AuroraBackground
+            className="rotate-180"
+            containerClassName="flex rotate-180 backdrop-hue-rotate-30 bg-black/60 flex-row items-center justify-center gap-7 text-white/85 h-full"
+          >
+            <RiJavascriptFill className="text-5xl" />
+            <BiLogoTypescript className="text-5xl" />
+            <RiNextjsFill className="text-5xl" />
+            <RiTailwindCssFill className="text-5xl" />
+            <FaReact className="text-4xl" />
+            <FaFigma className="text-4xl" />
+            <FaServer className="text-4xl" />
+            <SiClerk className="text-4xl" />
+            <FaNode className="text-6xl" />
+          </AuroraBackground>
         </div>
 
-        <div className="flex w-full flex-col items-center justify-center gap-5 bg-black">
-          <h1 className="text-3xl font-bold tracking-tighter">
-            Previous work:
-          </h1>
-
-          <Tabs defaultValue="websites" className="w-full xl:max-w-[80%]">
-            <TabsList className="w-full justify-center gap-3 bg-black">
-              <TabsTrigger value="websites">Projects</TabsTrigger>
-              <Separator
-                orientation="vertical"
-                className="mx-0 h-3/4 px-0"
-              ></Separator>
-              <TabsTrigger value="designs">Designs</TabsTrigger>
-            </TabsList>
-            <TabsContent value="websites" className="w-full">
-              <AuroraBackground
-                className="h-[700px] w-full"
-                showRadialGradient={true}
+        <div className="crossed relative col-span-6 row-span-7 flex flex-col gap-5 p-5">
+          <Card>
+            <CardHeader>
+              <CardTitle>DashboardKit</CardTitle>
+              <CardDescription>
+                Dashboards have never been easier
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Image
+                src={
+                  "https://preview.redd.it/i-got-bored-so-i-decided-to-draw-a-random-image-on-the-v0-4ig97vv85vjb1.png?width=640&crop=smart&auto=webp&s=22ed6cc79cba3013b84967f32726d087e539b699"
+                }
+                width={500}
+                height={200}
+                className="h-[200px] w-full rounded-lg border-2 border-dashed border-white object-cover"
+              ></Image>
+            </CardContent>
+            <CardFooter>
+              <Link
+                href={"https://dashboardkit.juaneth.dev"}
+                className="text-blue-300 hover:after:content-['_↗']"
               >
-                <Card className="panel crossed relative w-full rounded-none border-dashed bg-black/75 backdrop-hue-rotate-30">
-                  <CardHeader>
-                    <CardTitle>Projects</CardTitle>
-                    <CardDescription>
-                      Websites and apps that I&apos;ve made over the years.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Table className="table">
-                      <TableHeader>
-                        <TableRow className="border-dashed">
-                          <TableHead className="w-min">Name:</TableHead>
-                          <TableHead className="w-[175px]">Link:</TableHead>
-                          <TableHead>How long to make:</TableHead>
-                          <TableHead className="text-right">
-                            What I would charge:
-                          </TableHead>
-                        </TableRow>
-                      </TableHeader>
-                      <TableBody>
-                        <TableRow>
-                          <TableCell className="font-medium">
-                            <HoverCard>
-                              <HoverCardTrigger>
-                                <Button variant={"link"} className="px-0">
-                                  juaneth.dev
-                                </Button>
-                              </HoverCardTrigger>
-                              <HoverCardContent className="w-96">
-                                <img
-                                  src="https://i.imghippo.com/files/AFzGE1718840488.png"
-                                  alt=""
-                                  className="w-full rounded"
-                                />
-                              </HoverCardContent>
-                            </HoverCard>
-                          </TableCell>
-                          <TableCell>
-                            <Link href="https://juaneth.dev">
-                              <Button variant={"link"} className="px-0">
-                                juaneth.dev
-                              </Button>
-                            </Link>
-                          </TableCell>
-                          <TableCell>~3 weeks</TableCell>
-                          <TableCell className="text-right">$99.99</TableCell>
-                        </TableRow>
+                Website
+              </Link>
+            </CardFooter>
+          </Card>
 
-                        <TableRow>
-                          <TableCell className="font-medium">
-                            orders.juaneth.dev
-                          </TableCell>
-                          <TableCell>You&apos;re here!</TableCell>
-                          <TableCell>~1 week</TableCell>
-                          <TableCell className="text-right">$119.99</TableCell>
-                        </TableRow>
-
-                        <TableRow>
-                          <TableCell>
-                            <HoverCard>
-                              <HoverCardTrigger>
-                                <Button variant={"link"} className="px-0">
-                                  argo.juaneth.dev
-                                </Button>
-                              </HoverCardTrigger>
-                              <HoverCardContent className="w-96">
-                                <img
-                                  src="https://i.imghippo.com/files/THTt61718840885.png"
-                                  alt=""
-                                  className="w-full rounded"
-                                />
-                              </HoverCardContent>
-                            </HoverCard>
-                          </TableCell>
-                          <TableCell>
-                            <Link href={"https://argo.juaneth.dev"}>
-                              <Button variant={"link"} className="px-0">
-                                argo.juaneth.dev
-                              </Button>
-                            </Link>
-                          </TableCell>
-                          <TableCell>Still in development</TableCell>
-                          <TableCell className="text-right">$154.99+</TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell>
-                            <HoverCard>
-                              <HoverCardTrigger>
-                                <Button variant={"link"} className="px-0">
-                                  juaneth.dev {"->"} Last years revision
-                                </Button>
-                              </HoverCardTrigger>
-                              <HoverCardContent className="w-96">
-                                <img
-                                  src="https://i.imghippo.com/files/aslI91718841016.png"
-                                  alt=""
-                                  className="w-full rounded"
-                                />
-                              </HoverCardContent>
-                            </HoverCard>
-                          </TableCell>
-                          <TableCell>
-                            <Link
-                              href={"https://github.com/juaneth/juanethdev"}
-                            >
-                              <Button variant={"link"} className="px-0">
-                                github.com
-                              </Button>
-                            </Link>
-                          </TableCell>
-                          <TableCell>~2 weeks</TableCell>
-                          <TableCell className="text-right">
-                            $39.99 + $19.99 for 3D designing
-                          </TableCell>
-                        </TableRow>
-                      </TableBody>
-                    </Table>
-                  </CardContent>
-                </Card>
-              </AuroraBackground>
-            </TabsContent>
-            <TabsContent value="designs">
-              <AuroraBackground
-                className="h-[700px] w-full"
-                showRadialGradient={true}
+          <Card>
+            <CardHeader>
+              <CardTitle>DashboardKit</CardTitle>
+              <CardDescription>
+                Dashboards have never been easier
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Image
+                src={
+                  "https://preview.redd.it/i-got-bored-so-i-decided-to-draw-a-random-image-on-the-v0-4ig97vv85vjb1.png?width=640&crop=smart&auto=webp&s=22ed6cc79cba3013b84967f32726d087e539b699"
+                }
+                width={500}
+                height={200}
+                className="h-[200px] w-full rounded-lg border-2 border-dashed border-white object-cover"
+              ></Image>
+            </CardContent>
+            <CardFooter>
+              <Link
+                href={"https://dashboardkit.juaneth.dev"}
+                className="text-blue-300 hover:after:content-['_↗']"
               >
-                <Card className="panel crossed relative w-full rounded-none border-dashed bg-black/75 backdrop-hue-rotate-30">
-                  <CardHeader>
-                    <CardTitle>Designs</CardTitle>
-                    <CardDescription>
-                      Designs i&apos;ve made over the years for various reasons.
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <Table>
-                      <TableHeader>
-                        <TableRow className="border-dashed">
-                          <TableHead className="w-min">Complexity:</TableHead>
-                          <TableHead className="w-[175px]">
-                            Usual Features:
-                          </TableHead>
-                          <TableHead>Completed within:</TableHead>
-                          <TableHead>Revisions:</TableHead>
-                          <TableHead className="text-right">
-                            Avg. Price:
-                          </TableHead>
-                        </TableRow>
-                      </TableHeader>
-                      <TableBody>
-                        <TableRow>
-                          <TableCell className="font-medium">
-                            Small business
-                          </TableCell>
-                          <TableCell>
-                            Small business social media designs (icons,
-                            banners), Simple website (see above)
-                          </TableCell>
-                          <TableCell>15 Days</TableCell>
-                          <TableCell>5</TableCell>
-                          <TableCell className="text-right">$49.99</TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell className="font-medium">
-                            Ecommerce
-                          </TableCell>
-                          <TableCell>
-                            Social media posts and marketing images for online
-                            advertisment (Instagram, Facebook, X), Complex
-                            website
-                          </TableCell>
-                          <TableCell>25 Days</TableCell>
-                          <TableCell>15</TableCell>
-                          <TableCell className="text-right">$119.99</TableCell>
-                        </TableRow>
-                        <TableRow>
-                          <TableCell className="font-medium">Custom</TableCell>
-                          <TableCell>Anything not listed here.</TableCell>
-                          <TableCell>N/A</TableCell>
-                          <TableCell>Unlimited</TableCell>
-                          <TableCell className="text-right">$149.99+</TableCell>
-                        </TableRow>
-                      </TableBody>
-                    </Table>
-                  </CardContent>
-                </Card>
-              </AuroraBackground>
-            </TabsContent>
-          </Tabs>
+                Website
+              </Link>
+            </CardFooter>
+          </Card>
+        </div>
+        <div className="crossed relative col-span-6 row-span-4 p-5">
+          Articles
+        </div>
+        <div className="crossed relative col-span-6 row-span-4 p-5">
+          About me
         </div>
       </div>
     </div>

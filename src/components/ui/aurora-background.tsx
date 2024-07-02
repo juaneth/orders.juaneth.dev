@@ -48,9 +48,7 @@ export const AuroraBackground = ({
                 `[mask-image:radial-gradient(ellipse_at_100%_0%,black_20%,var(--transparent)_90%)]`,
             )}
           ></div>
-          <div className={cn("flex h-full w-full", containerClassName)}>
-            {children}
-          </div>
+          <div className={cn("flex", containerClassName)}>{children}</div>
         </div>
       </div>
     </>
