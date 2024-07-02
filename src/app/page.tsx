@@ -49,7 +49,7 @@ import Desc from "./_components/Cards/Desc";
 export default async function Home() {
   return (
     <div className="flex flex w-full grow flex-col items-center">
-      <div className="bordered-all m-3 h-[60rem] max-w-[100rem] grow grid-cols-12 grid-rows-12 divide-x divide-y divide-dashed divide-white/30 lg:grid">
+      <div className="bordered-all m-3 max-w-[100rem] grow grid-cols-12 grid-rows-12 divide-x divide-y divide-dashed divide-white/30 lg:grid">
         <div className="crossed relative col-span-12 row-span-3 border-dashed">
           <AuroraBackground
             className="min-h-48 w-full"
@@ -93,7 +93,7 @@ export default async function Home() {
         </div>
         <div className="crossed techlist relative col-span-12 row-span-1">
           <AuroraBackground
-            className="rotate-180"
+            className="min-h-24 rotate-180"
             containerClassName="flex rotate-180 backdrop-hue-rotate-30 bg-black/60 flex-row items-center justify-center gap-7 text-white/85 h-full"
           >
             <RiJavascriptFill className="text-5xl" />
@@ -113,7 +113,7 @@ export default async function Home() {
             <CardHeader>
               <CardTitle>DashboardKit</CardTitle>
               <CardDescription>
-                Dashboards have never been easier
+                Dashboards have never been easier.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -138,9 +138,9 @@ export default async function Home() {
 
           <Card>
             <CardHeader>
-              <CardTitle>DashboardKit</CardTitle>
+              <CardTitle>Argo</CardTitle>
               <CardDescription>
-                Dashboards have never been easier
+                Open source driven by the community.
               </CardDescription>
             </CardHeader>
             <CardContent>
