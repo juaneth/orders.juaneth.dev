@@ -152,7 +152,7 @@ export default async function Home() {
                 width={500}
                 height={200}
                 className="h-[200px] w-full rounded-lg border-2 border-dashed border-white object-cover"
-                alt="arg preview"
+                alt="argo preview"
               ></Image>
             </CardContent>
             <CardFooter>
