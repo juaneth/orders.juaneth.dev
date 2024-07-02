@@ -130,7 +130,7 @@ export default async function Home() {
             <CardFooter>
               <Link
                 href={"https://dashboardkit.juaneth.dev"}
-                className="text-blue-300 hover:after:content-['_↗']"
+                className="hover:after:content-['_↗'] text-blue-300"
               >
                 Website
               </Link>
@@ -152,13 +152,13 @@ export default async function Home() {
                 width={500}
                 height={200}
                 className="h-[200px] w-full rounded-lg border-2 border-dashed border-white object-cover"
-                alt="argo preview"
+                alt="arg preview"
               ></Image>
             </CardContent>
             <CardFooter>
               <Link
                 href={"https://dashboardkit.juaneth.dev"}
-                className="text-blue-300 hover:after:content-['_↗']"
+                className="hover:after:content-['_↗'] text-blue-300"
               >
                 Website
               </Link>

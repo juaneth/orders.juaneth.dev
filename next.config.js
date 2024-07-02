@@ -9,10 +9,10 @@ const config = {
     images: {
         remotePatterns: [
             {
-                protocol: 'https',
-                hostname: '**',
-                port: '',
-                pathname: '**',
+                protocol: &apos;https&apos;,
+                hostname: &apos;**&apos;,
+                port: &apos;&apos;,
+                pathname: &apos;**&apos;,
             },
         ],
     },

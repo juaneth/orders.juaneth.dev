@@ -1,4 +1,4 @@
-/** @type {import('prettier').Config & import('prettier-plugin-tailwindcss').PluginOptions} */
+/** @type {import(&apos;prettier&apos;).Config & import(&apos;prettier-plugin-tailwindcss&apos;).PluginOptions} */
 const config = {
   plugins: ["prettier-plugin-tailwindcss"],
 };

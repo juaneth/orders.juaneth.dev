@@ -4,7 +4,7 @@ import { z } from "zod";
 export const env = createEnv({
   /**
    * Specify your server-side environment variables schema here. This way you can ensure the app
-   * isn't built with invalid env vars.
+   * isn&apos;t built with invalid env vars.
    */
   server: {
     POSTGRES_URL: z.string().url(),
@@ -15,7 +15,7 @@ export const env = createEnv({
 
   /**
    * Specify your client-side environment variables schema here. This way you can ensure the app
-   * isn't built with invalid env vars. To expose them to the client, prefix them with
+   * isn&apos;t built with invalid env vars. To expose them to the client, prefix them with
    * `NEXT_PUBLIC_`.
    */
   client: {
@@ -23,7 +23,7 @@ export const env = createEnv({
   },
 
   /**
-   * You can't destruct `process.env` as a regular object in the Next.js edge runtimes (e.g.
+   * You can&apos;t destruct `process.env` as a regular object in the Next.js edge runtimes (e.g.
    * middlewares) or client-side so we need to destruct manually.
    */
   runtimeEnv: {
@@ -38,7 +38,7 @@ export const env = createEnv({
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
   /**
    * Makes it so that empty strings are treated as undefined. `SOME_VAR: z.string()` and
-   * `SOME_VAR=''` will throw an error.
+   * `SOME_VAR=&apos;&apos;` will throw an error.
    */
   emptyStringAsUndefined: true,
 });
