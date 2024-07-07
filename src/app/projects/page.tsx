@@ -1,6 +1,6 @@
 "use client";
 
-let projects = [
+const projects = [
   {
     name: "DashboardKit",
     desc: "Dashboards have never been easier.",
