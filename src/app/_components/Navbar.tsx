@@ -22,15 +22,15 @@ export default function Navbar() {
           </div>
         </div>
 
-        <div className="flex h-10 flex-row gap-4">
+        <div className="flex h-10 flex-row gap-0 sm:gap-4">
           <SignedIn>
             <Link href={"/order"}>
               <Button
-                className="bordered-all relative gap-3 rounded-sm bg-black pl-3 pr-5 text-base font-normal text-white hover:bg-white/10"
+                className="bordered-all relative gap-3 rounded-sm bg-black p-2 text-base font-normal text-white hover:bg-white/10 sm:pl-3 sm:pr-5"
                 role="button"
               >
                 <IoIosAdd className="text-2xl" />
-                Create an order
+                <p className="hidden sm:block">Orders/Commisions</p>
               </Button>
             </Link>
 

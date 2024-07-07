@@ -45,25 +45,37 @@ import { SiClerk } from "react-icons/si";
 import { FaNode } from "react-icons/fa";
 
 import Desc from "./_components/Cards/Desc";
+import { ProjectsWidget } from "./projects/page";
 
 export default async function Home() {
   return (
-    <div className="flex flex w-full grow flex-col items-center">
-      <div className="bordered-all m-3 max-w-[100rem] grow grid-cols-12 grid-rows-12 divide-x divide-y divide-dashed divide-white/30 lg:grid">
+    <div className="flex flex w-full grow flex-col items-center p-5">
+      <div className="bordered-all flex w-full grow border-collapse grid-cols-12 grid-rows-12 flex-col divide-x divide-y divide-dashed divide-white/30 border-dashed lg:grid">
         <div className="crossed relative col-span-12 row-span-3 border-dashed">
           <AuroraBackground
-            className="min-h-48 w-full"
-            containerClassName="justify-center items-center h-full"
+            className="min-h-64 w-full rotate-180"
+            containerClassName="justify-center backdrop-hue-rotate-30 rotate-180 items-center h-full w-full bg-black/30"
           >
-            <div className="flex flex-col items-center justify-center gap-4 bg-black/30 text-center">
-              <h1 className="text-5xl font-bold tracking-tighter text-white">
+            <div className="flex flex-col items-center justify-center gap-4 text-center">
+              <h1 className="text-4xl font-bold -tracking-[.06em] text-white md:text-6xl">
                 juaneth.dev
               </h1>
               <p className="text-lg text-white/75">
-                Full stack/web developer from the UK.
+                Web developer from the UK.
               </p>
             </div>
           </AuroraBackground>
+        </div>
+        <div className="crossed relative col-span-12 row-span-1 flex flex-wrap items-center justify-center p-5 text-white/90">
+          <div className="flex min-h-20 flex-row items-center gap-6 text-4xl md:text-5xl">
+            <RiJavascriptFill />
+            <BiLogoTypescript />
+            <RiNextjsFill />
+            <RiTailwindCssFill />
+            <FaReact />
+            <FaFigma />
+            <FaNode />
+          </div>
         </div>
         <div className="crossed relative col-span-8 row-span-1">
           <Desc></Desc>
@@ -91,85 +103,15 @@ export default async function Home() {
             <FaFigma className="text-3xl text-white/70 transition-all hover:text-white/90" />
           </Link>
         </div>
-        <div className="crossed techlist relative col-span-12 row-span-1">
-          <AuroraBackground
-            className="min-h-24 rotate-180"
-            containerClassName="flex rotate-180 backdrop-hue-rotate-30 bg-black/60 flex-row items-center justify-center gap-7 text-white/85 h-full"
-          >
-            <RiJavascriptFill className="text-5xl" />
-            <BiLogoTypescript className="text-5xl" />
-            <RiNextjsFill className="text-5xl" />
-            <RiTailwindCssFill className="text-5xl" />
-            <FaReact className="text-4xl" />
-            <FaFigma className="text-4xl" />
-            <FaServer className="text-4xl" />
-            <SiClerk className="text-4xl" />
-            <FaNode className="text-6xl" />
-          </AuroraBackground>
-        </div>
 
-        <div className="crossed relative col-span-6 row-span-7 flex flex-col gap-5 p-5">
-          <Card>
-            <CardHeader>
-              <CardTitle>DashboardKit</CardTitle>
-              <CardDescription>
-                Dashboards have never been easier.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Image
-                src={
-                  "https://preview.redd.it/i-got-bored-so-i-decided-to-draw-a-random-image-on-the-v0-4ig97vv85vjb1.png?width=640&crop=smart&auto=webp&s=22ed6cc79cba3013b84967f32726d087e539b699"
-                }
-                width={500}
-                height={200}
-                className="h-[200px] w-full rounded-lg border-2 border-dashed border-white object-cover"
-                alt="dashboardkit preview"
-              ></Image>
-            </CardContent>
-            <CardFooter>
-              <Link
-                href={"https://dashboardkit.juaneth.dev"}
-                className="text-blue-300 hover:after:content-[&apos;_↗&apos;]"
-              >
-                Website
-              </Link>
-            </CardFooter>
-          </Card>
-
-          <Card>
-            <CardHeader>
-              <CardTitle>Argo</CardTitle>
-              <CardDescription>
-                Open source driven by the community.
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <Image
-                src={
-                  "https://preview.redd.it/i-got-bored-so-i-decided-to-draw-a-random-image-on-the-v0-4ig97vv85vjb1.png?width=640&crop=smart&auto=webp&s=22ed6cc79cba3013b84967f32726d087e539b699"
-                }
-                width={500}
-                height={200}
-                className="h-[200px] w-full rounded-lg border-2 border-dashed border-white object-cover"
-                alt="argo preview"
-              ></Image>
-            </CardContent>
-            <CardFooter>
-              <Link
-                href={"https://dashboardkit.juaneth.dev"}
-                className="text-blue-300 hover:after:content-[&apos;_↗&apos;]"
-              >
-                Website
-              </Link>
-            </CardFooter>
-          </Card>
+        <div className="crossed relative col-span-8 row-span-7 flex flex-col">
+          <ProjectsWidget></ProjectsWidget>
         </div>
-        <div className="crossed relative col-span-6 row-span-4 p-5">
+        <div className="crossed relative col-span-4 row-span-4 p-5">
           Articles
         </div>
-        <div className="crossed relative col-span-6 row-span-4 p-5">
-          About me
+        <div className="crossed relative col-span-4 row-span-4 p-5">
+          Things.
         </div>
       </div>
     </div>
