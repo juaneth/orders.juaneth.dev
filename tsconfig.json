@@ -9,6 +9,8 @@
     "moduleDetection": "force",
     "isolatedModules": true,
 
+    "skipDefaultLibCheck": true,
+
     /* Strictness */
     "strict": false,
     "noUncheckedIndexedAccess": true,
