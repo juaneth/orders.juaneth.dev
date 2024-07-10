@@ -1,4 +1,5 @@
 /// <reference no-default-lib="true"/>
+/* eslint-disable */
 
 "use client";
 import { cn } from "~/lib/utils";
@@ -308,3 +309,4 @@ interface ShaderProps {
   };
   maxFps?: number;
 }
+/* eslint-enable */
