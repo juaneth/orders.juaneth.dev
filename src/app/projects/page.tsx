@@ -176,27 +176,29 @@ export default function ProjectsPage() {
 
 export function ProjectsWidget() {
   return (
-    <div className="flex flex-col gap-0">
+    <div className="flex flex-col gap-5 p-5">
       {projects.map((project) => {
         return (
           <>
             <Card
               key={project.name}
               prev={
-                <div className="flex h-32 w-full flex-col items-center justify-center gap-0">
-                  <div className="w-16">
+                <div className="flex h-28 w-full flex-col items-center justify-center gap-0">
+                  <div className="w-12">
                     <project.image className={"opacity-90"}></project.image>
                   </div>
                 </div>
               }
-              className={"h-32"}
+              className={
+                "bordered-all h-28 w-full rounded-lg transition-all hover:h-40 hover:w-full"
+              }
               content={
                 <>
                   <Link href={project.url}>
                     <div className="flex h-full flex-col items-center justify-center gap-0">
                       <div className="flex flex-col gap-1">
                         <h1 className="text-2xl font-semibold tracking-tighter">
-                          {project.name}:
+                          {project.name}
                         </h1>
                         <h1 className="text-xl opacity-90">{project.desc}</h1>
                       </div>
@@ -218,8 +220,6 @@ export function ProjectsWidget() {
               {/* Radial gradient for the cute fade */}
               <div className="absolute inset-0 bg-black/70 [mask-image:radial-gradient(400px_at_center,white,transparent)]" />
             </Card>
-
-            <Separator></Separator>
           </>
         );
       })}
@@ -243,10 +243,7 @@ const Card = ({
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={cn(
-        "group/canvas-card crossed relative flex w-full",
-        className,
-      )}
+      className={cn("group/canvas-card relative flex w-full", className)}
     >
       <AnimatePresence>
         {hovered && (
@@ -260,7 +257,7 @@ const Card = ({
         )}
       </AnimatePresence>
 
-      <div className="relative z-20 w-full">
+      <div className="absolute relative z-20 w-full">
         <div className="absolute top-0 flex  w-full transition duration-200 group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0">
           {prev}
         </div>
